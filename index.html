@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link
@@ -11,50 +12,176 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <div class="calculator">
-      <div class="display">
-        <input type="text" disabled id="output" class="calc_output" value="0" />
-      </div>
-      <div class="buttons">
-        <button class="button btn-gray">AC</button>
-        <button class="button btn-gray">+/-</button>
-        <button class="button btn-gray">
-          <i class="fa-solid fa-percent"></i>
-        </button>
-        <button class="button btn-orange">
-          <i class="fa-solid fa-divide"></i>
-        </button>
+    <div class="calculator" id="calculator">
+      <form id="calc-form">
+        <div class="display">
+          <input
+            type="text"
+            disabled
+            id="output"
+            class="calc_output"
+            value="0"
+          />
+        </div>
+        <div class="buttons">
+          <button
+            type="reset"
+            data-type="clear"
+            value="clear"
+            class="btn btn-gray"
+          >
+            AC
+          </button>
+          <button
+            type="button"
+            data-type="operator"
+            value="invert"
+            class="btn btn-gray"
+          >
+            +/-
+          </button>
+          <button
+            type="button"
+            data-type="operator"
+            value="%"
+            class="btn btn-gray"
+          >%
+            <!-- <i class="fa-solid fa-percent"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="oparator"
+            value="/"
+            class="btn btn-orange"
+          >÷
+            <!-- <i class="fa-solid fa-divide"></i> -->
+          </button>
 
-        <button class="button btn-black"><i class="fa-solid fa-7"></i></button>
-        <button class="button btn-black"><i class="fa-solid fa-8"></i></button>
-        <button class="button btn-black"><i class="fa-solid fa-9"></i></button>
-        <button class="button btn-orange">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="7"
+            class="btn btn-black"
+          >7
+            <!-- <i class="fa-solid fa-7"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="8"
+            class="btn btn-black"
+          >8
+            <!-- <i class="fa-solid fa-8"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="9"
+            class="btn btn-black"
+          >9
+            <!-- <i class="fa-solid fa-9"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operator"
+            value="*"
+            class="btn btn-orange"
+          >x
+            <!-- <i class="fa-solid fa-xmark"></i> -->
+          </button>
 
-        <button class="button btn-black"><i class="fa-solid fa-4"></i></button>
-        <button class="button btn-black"><i class="fa-solid fa-5"></i></button>
-        <button class="button btn-black"><i class="fa-solid fa-6"></i></button>
-        <button class="button btn-orange">
-          <i class="fa-solid fa-minus"></i>
-        </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="4"
+            class="btn btn-black"
+          >4
+            <!-- <i class="fa-solid fa-4"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="5"
+            class="btn btn-black"
+          >5
+            <!-- <i class="fa-solid fa-5"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="6"
+            class="btn btn-black"
+          >6
+            <!-- <i class="fa-solid fa-6"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operator"
+            value="-"
+            class="btn btn-orange"
+          >-
+            <!-- <i class="fa-solid fa-minus"></i> -->
+          </button>
 
-        <button class="button btn-black"><i class="fa-solid fa-1"></i></button>
-        <button class="button btn-black"><i class="fa-solid fa-2"></i></button>
-        <button class="button btn-black"><i class="fa-solid fa-3"></i></button>
-        <button class="button btn-orange">
-          <i class="fa-solid fa-plus"></i>
-        </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="1"
+            class="btn btn-black"
+          >1
+            <!-- <i class="fa-solid fa-1"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="2"
+            class="btn btn-black"
+          >2
+            <!-- <i class="fa-solid fa-2"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="3"
+            class="btn btn-black"
+          >3
+            <!-- <i class="fa-solid fa-3"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operator"
+            value="+"
+            class="btn btn-orange"
+          >+
+            <!-- <i class="fa-solid fa-plus"></i> -->
+          </button>
 
-        <button class="button btn-black">
-          <i class="fa-solid fa-calculator"></i>
-        </button>
-        <button class="button btn-black"><i class="fa-solid fa-0"></i></button>
-        <button class="button btn-black">.</button>
-        <button class="button btn-orange">
-          <i class="fa-solid fa-equals"></i>
-        </button>
-      </div>
+          <button
+            type="button"
+            data-type="operand"
+            value="0"
+            class="btn btn-black bx0"
+          >0
+            <!-- <i class="fa-solid fa-0"></i> -->
+          </button>
+          <button
+            type="button"
+            data-type="operand"
+            value="."
+            class="btn btn-black"
+          >
+            .
+          </button>
+          <button
+            type="button"
+            data-type="operator"
+            value="="
+            class="btn btn-orange"
+          >=
+            <!-- <i class="fa-solid fa-equals"></i> -->
+          </button>
+        </div>
+      </form>
     </div>
 
     <script src="/script.js"></script>
